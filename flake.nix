@@ -43,8 +43,9 @@
                 wait
                 for fontfile in ${plainPackage}/share/fonts/truetype/*; do
                     nerd-font-patcher $fontfile \
-                    --custom "${self}/Font Awesome 6 Duotone-Solid-900.otf" 
+                    --custom "${self}/Font Awesome 6 Duotone-Solid-900.otf" &
                 done
+                wait
               '';
             };
 
