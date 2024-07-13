@@ -35,16 +35,12 @@
                 mkdir -p ${outDir}
               '';
               buildPhase = ''
-                ${pkgs.sops}/bin/sops decrypt ${self}/FontAwesome6Encrypted > "$out/Font Awesome 6 Pro-Regular-400.otf"
                 for fontfile in ${plainPackage}/share/fonts/truetype/*; do
                     nerd-font-patcher $fontfile \
                     --complete --careful -s --makegroups '-1' \
-                    --custom "$out/Font Awesome 6 Pro-Regular-400.otf" --outputdir ${outDir} &
+                    --custom "${self}/Font Awesome 6 Pro-Regular-400.otf" --outputdir ${outDir} &
                 done
                 wait
-              '';
-              installPhase = ''
-                  cp -vr $src/*.{ttf,otf} $out/share/fonts/truetype/
               '';
             };
 
