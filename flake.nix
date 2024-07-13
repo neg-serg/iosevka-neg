@@ -41,7 +41,7 @@
                     --outputdir ${outDir} &
                 done
                 wait
-                for fontfile in ${plainPackage}/share/fonts/truetype/*; do
+                for fontfile in ${outDir}/*; do
                     nerd-font-patcher $fontfile \
                     --custom "${self}/Font Awesome 6 Duotone-Solid-900.otf" &
                 done
