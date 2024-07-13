@@ -31,12 +31,15 @@
                 name = "iosevka-neg";
               };
               buildInputs = [pkgs.nerd-font-patcher];
-              configurePhase = "mkdir -p ${outDir}";
+              configurePhase = ''
+                mkdir -p ${outDir}
+              '';
               buildPhase = ''
+                ${pkgs.sops}/bin/sops decrypt ${self}/FontAwesome6Encrypted > "$out/Font Awesome 6 Pro-Regular-400.otf"
                 for fontfile in ${plainPackage}/share/fonts/truetype/*; do
                     nerd-font-patcher $fontfile \
                     --complete --careful -s --makegroups '-1' \
-                    --custom "${self}/Font Awesome 6 Pro-Regular-400.otf" --outputdir ${outDir} &
+                    --custom "$out/Font Awesome 6 Pro-Regular-400.otf" --outputdir ${outDir} &
                 done
                 wait
               '';
