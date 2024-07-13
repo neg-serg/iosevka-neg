@@ -37,7 +37,7 @@
               buildPhase = ''
                 for fontfile in ${plainPackage}/share/fonts/truetype/*; do
                     nerd-font-patcher $fontfile \
-                    --complete --careful -s --makegroups '-1' \
+                    --complete -s --makegroups '-1' \
                     --custom "${self}/Font Awesome 6 Pro-Regular-400.otf" --outputdir ${outDir} &
                 done
                 wait
