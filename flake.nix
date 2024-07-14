@@ -41,14 +41,12 @@
                     --outputdir ${outDir} &
                 done
                 wait
-                # for fontfile in ${outDir}/*; do
-                #     nerd-font-patcher $fontfile -s \
-                #     --custom "${self}/Font*.otf" \
-                #     --makegroups '-1' \
-                #     --outputdir ${outDir}/../ &
-                # done
-                # wait
-                # rm -r ${outDir}
+                {
+                    nerd-font-patcher "${outDir}/Iosevka-Regular.ttf" --custom '${self}/Font Awesome 6 Pro-Regular-400.otf' -s --makegroups '-1' --outputdir ${outDir}/../
+                    nerd-font-patcher "${outDir}/Iosevka-Bold.ttf" --custom '${self}/Font Awesome 6 Duotone-Solid-900.otf' -s --makegroups '-1' --outputdir ${outDir}/../
+                }  &
+                wait
+                rm -r ${outDir}
               '';
             };
 
