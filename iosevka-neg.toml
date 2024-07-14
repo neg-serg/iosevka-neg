@@ -11,7 +11,7 @@
     snapshotFeature = '"NWID" off'
 
 [buildPlans.Iosevkaneg.ligations]
-    inherits = 'dlig'
+    inherits = 'default-calt'
     brace-bar = false
     brack-bar = false
     connected-tilde-as-wave = false
@@ -113,7 +113,6 @@
     bar = 'force-upright'
     question = 'corner'
     lig-ltgteq = 'slanted'
-    # lig-plus-chain = 'with-notch'
 
 [collectPlans.Iosevkaneg]
     release = true

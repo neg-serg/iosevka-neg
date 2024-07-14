@@ -41,14 +41,14 @@
                     --outputdir ${outDir} &
                 done
                 wait
-                for fontfile in ${outDir}/*; do
-                    nerd-font-patcher $fontfile -s \
-                    --custom "${self}/Font*.otf" \
-                    --makegroups '-1' \
-                    --outputdir ${outDir}/../ &
-                done
-                wait
-                rm -r ${outDir}
+                # for fontfile in ${outDir}/*; do
+                #     nerd-font-patcher $fontfile -s \
+                #     --custom "${self}/Font*.otf" \
+                #     --makegroups '-1' \
+                #     --outputdir ${outDir}/../ &
+                # done
+                # wait
+                # rm -r ${outDir}
               '';
             };
 
