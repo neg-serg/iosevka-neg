@@ -125,9 +125,9 @@
     css = 500
 
 [buildPlans.Iosevkaneg.weights.Bold]
-    shape = 700
-    menu = 700
-    css = 700
+    shape = 600
+    menu = 600
+    css = 600
 
 [buildPlans.Iosevkaneg.slopes.Upright]
     angle = 0
