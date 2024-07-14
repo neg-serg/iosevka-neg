@@ -42,7 +42,7 @@
                 done
                 wait
                 for fontfile in ${outDir}/*; do
-                    nerd-font-patcher $fontfile \
+                    nerd-font-patcher $fontfile -s \
                     --custom "${self}/Font Awesome 6 Duotone-Solid-900.otf" \
                     --makegroups '-1' \
                     --outputdir ${outDir}/../ &
