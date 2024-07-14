@@ -21,7 +21,7 @@
           };
 
           nerdFontPackage = let
-            outDir = "$out/share/fonts/truetype/";
+            outDir = "$out/share/fonts/truetype/prepare";
           in
             pkgs.stdenv.mkDerivation {
               pname = "iosevka-nerd-font";
@@ -43,9 +43,12 @@
                 wait
                 for fontfile in ${outDir}/*; do
                     nerd-font-patcher $fontfile \
-                    --custom "${self}/Font Awesome 6 Duotone-Solid-900.otf" &
+                    --custom "${self}/Font Awesome 6 Duotone-Solid-900.otf" \
+                    --makegroups '-1' \
+                    --outputdir ${outDir}/../ &
                 done
                 wait
+                rm -r ${outDir}
               '';
             };
 
