@@ -45,6 +45,7 @@
                     nerd-font-patcher "${outDir}/Iosevka-Regular.ttf" --custom '${self}/Font Awesome 6 Pro-Regular-400.otf' -s --makegroups '-1' --outputdir ${outDir}/../
                     nerd-font-patcher "${outDir}/Iosevka-Italic.ttf" --custom '${self}/Font Awesome 6 Pro-Regular-400.otf' -s --makegroups '-1' --outputdir ${outDir}/../
                     nerd-font-patcher "${outDir}/Iosevka-Medium.ttf" --custom '${self}/Font Awesome 6 Pro-Regular-400.otf' -s --makegroups '-1' --outputdir ${outDir}/../
+                    nerd-font-patcher "${outDir}/Iosevka-MediumItalic.ttf" --custom '${self}/Font Awesome 6 Pro-Regular-400.otf' -s --makegroups '-1' --outputdir ${outDir}/../
                     nerd-font-patcher "${outDir}/Iosevka-Bold.ttf" --custom '${self}/Font Awesome 6 Duotone-Solid-900.otf' -s --makegroups '-1' --outputdir ${outDir}/../
                     nerd-font-patcher "${outDir}/Iosevka-BoldItalic.ttf" --custom '${self}/Font Awesome 6 Duotone-Solid-900.otf' -s --makegroups '-1' --outputdir ${outDir}/../
                 }  &
