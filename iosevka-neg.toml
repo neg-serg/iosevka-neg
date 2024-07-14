@@ -153,6 +153,6 @@
     css   = 'italic'
 
 [widths.normal]
-    shape = 500
+    shape = 5
     menu  = 5
     css   = 'normal'
