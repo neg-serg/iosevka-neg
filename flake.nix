@@ -34,13 +34,13 @@
             }
             trap cleanup EXIT
 
-            if [ -z "${SOPS_AGE_KEY_FILE:-}" ] && [ -n "${SOPS_AGE_KEY:-}" ]; then
+            if [ -z "''${SOPS_AGE_KEY_FILE:-}" ] && [ -n "''${SOPS_AGE_KEY:-}" ]; then
               tmp_key="$(mktemp)"
               printf '%s\n' "$SOPS_AGE_KEY" > "$tmp_key"
               export SOPS_AGE_KEY_FILE="$tmp_key"
             fi
 
-            if [ -z "${SOPS_AGE_KEY_FILE:-}" ] || [ ! -r "${SOPS_AGE_KEY_FILE}" ]; then
+            if [ -z "''${SOPS_AGE_KEY_FILE:-}" ] || [ ! -r "''${SOPS_AGE_KEY_FILE}" ]; then
               echo "Missing age key: set SOPS_AGE_KEY or SOPS_AGE_KEY_FILE" >&2
               exit 1
             fi
