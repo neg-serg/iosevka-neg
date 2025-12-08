@@ -12,19 +12,10 @@ jobs:
     # Secrets are unavailable for forked PRs; skip to avoid guaranteed failure.
     if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
-    env:
-      # Secrets: add SOPS_AGE_KEY in repo settings so sops can decrypt fa.tar.gz.enc
-      SOPS_AGE_KEY: ${{ secrets.SOPS_AGE_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@v12
       - uses: DeterminateSystems/magic-nix-cache-action@v7
-      - name: Validate age key secret
-        run: |
-          if [ -z "${SOPS_AGE_KEY:-}" ]; then
-            echo "SOPS_AGE_KEY secret is not configured; set it in repo secrets to build the nerd font." >&2
-            exit 1
-          fi
       - name: Build nerd font package
         run: |
           SYSTEM=$(nix eval --impure --raw --expr builtins.currentSystem)
